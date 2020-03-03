@@ -1,5 +1,7 @@
 {% extends "demo/base.html" %}
 {% load tethys_gizmos %}
+{% load static %}
+
 
 {% block header_buttons %}
   <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
@@ -11,8 +13,10 @@
   <h1>A demo 'About me' app created using tethys web development software - Abhishek Amalaraj</h1>
  <p> Date: 02/28/2020 </p>
 
+<img src="{% static 'demo/images/abu.png' %}" height="350">
+
   <h2>This app was created as part of the homework to learn how tethys works especially with respect to creating an app !</h2>
-<img src="abu.png" />
+
 {% endblock %}
 
 {# Use the after_app_content block for modals #}
@@ -20,8 +24,9 @@
   <!-- Example Modal -->
   <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="help-modal-label">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
+      <img class="modal-content">
+        < class="modal-header">
+
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h5 class="modal-title" id="help-modal-label">Example Modal</h5>
         </div>

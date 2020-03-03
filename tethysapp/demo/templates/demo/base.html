@@ -5,8 +5,9 @@
 {% block title %}{{ tethys_app.name }}{% endblock %}
 
 {% block app_icon %}
-  {# The path you provided in your app.py is accessible through the tethys_app.icon context variable #}
-  <img src="{% if 'http' in abu.png %}{{ abu.png }}{% else %}{% static abu.png%}{% endif %}" />
+{# The path you provided in your app.py is accessible through the tethys_app.icon context variable #}
+<img src="{% if 'http' in tethys_app.icon %}{{ tethys_app.icon }}{% else %}{% static tethys_app.icon %}{% endif %}" />
+
 <style>
   .active{
    color: black;
@@ -18,12 +19,14 @@
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
 {% block app_navigation_items %}
-  <li class="title">App Navigation</li>
-  <li class="active"><a href="">Home</a></li>
-
+  <li class="title">A little bit about me</li>
+  <li class="active"><a href=""> Name: Abhishek Amalaraj</a></li>
+<li class="active"><a href=""> Favorite fictional character: Batman</a></li>
+<li class="active"><a href=""> Allergic to: Hypocrisy :P</a></li>
+<li class="active"><a href=""> Fav. thing in America: Instant mash potatoes and Crumbl cookies  </a></li>
 
   <li class="separator"></li>
-  <li><a href="">Get Started</a></li>
+  <li><a href="">Masters in Civil Engineering at BYU ( COOLER THAN IT SOUNDS !)</a></li>
 {% endblock %}
 
 {% block app_content %}
