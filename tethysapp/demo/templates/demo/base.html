@@ -18,16 +18,24 @@
 {# The name you provided in your app.py is accessible through the tethys_app.name context variable #}
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
+
 {% block app_navigation_items %}
-  <li class="title">A little bit about me</li>
-  <li class="active"><a href=""> Name: Abhishek Amalaraj</a></li>
-<li class="active"><a href=""> Favorite fictional character: Batman</a></li>
-<li class="active"><a href=""> Allergic to: Hypocrisy :P</a></li>
-<li class="active"><a href=""> Fav. thing in America: Instant mash potatoes and Crumbl cookies  </a></li>
+
+{% url 'demo:home' as home_url %}
+{% url 'demo:map' as map_url %}
+{% url 'demo:proposal' as proposal_url %}
+{% url 'demo:design' as design_url %}
+
+
+<li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+<li class="{% if request.path == map_url %}active{% endif %}"><a href="{{ map_url }}">Map</a></li>
+<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
+<li class="{% if request.path == design_url %}active{% endif %}"><a href="{{ design_url }}">Design Page</a></li>
+<button id ='button' disabled onclick="app.distanceFinder()">Calculate PHA</button>
 
   <li class="separator"></li>
-  <li><a href="">Masters in Civil Engineering at BYU ( COOLER THAN IT SOUNDS !)</a></li>
-{% endblock %}
+
+0{% endblock %}
 
 {% block app_content %}
 {% endblock %}
