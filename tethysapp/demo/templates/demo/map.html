@@ -1,0 +1,96 @@
+{% extends "demo/base.html" %}
+{% block app_content %}
+
+
+
+<head>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+
+    <style>
+        #mapid { height: 500px; }
+
+        h1 {
+            font-family: cursive;
+            color: white;
+            font-weight: bolder;
+            text-align: center;
+            background-color: red;
+        }
+        h2 {
+            font-family: cursive;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: red;
+        }
+        h3 {
+            font-family: cursive;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: red;
+        }
+        body{
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<h1> Abhishek Amalaraj </h1>
+<h2> CEEN 514 Homework 7 <br></br>Build an Interactive Page with Leaflet Open Source Mapping API</h2>
+<h3> Date: 2/16/2019</h3>
+
+
+<div id="mapid"></div>
+
+
+
+<script>
+    var mymap = L.map('mapid').setView([11.0168, 76.9558], 14);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 32,
+    id: 'mapbox/streets-v11',
+    accessToken: 'pk.eyJ1IjoiYWJoaXNoZWthbWFsMTgiLCJhIjoiY2s1eTVxNGExMmQ5MDNubjExaWY5MjdvbSJ9.3nmdjWZmUCDNyRdlPo5gbg'
+}).addTo(mymap);
+
+
+var circle = L.circle([10.999905, 76.974481], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 600
+}).addTo(mymap);
+circle.bindPopup("<b>Hangout spot with friends</b><br>Snacks and aimless fun was our motto");
+
+var marker = L.marker([10.998493, 76.990770]).addTo(mymap);
+marker.bindPopup("<b>My home BRANCH :) </b><br>I got baptized here in 2009").openPopup();
+
+var marker = L.marker([11.001484, 77.017835]).addTo(mymap);
+marker.bindPopup("<b>My school !</b><br>only the legends go there").openPopup();
+
+var marker = L.marker([11.003954, 77.012356]).addTo(mymap);
+marker.bindPopup("<b>My home !</b><br>I ate a lot here and watched TV !").openPopup();
+
+var circle = L.circle([11.003954, 77.012356], {
+    color: 'green',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 800
+}).addTo(mymap);
+circle.bindPopup("<b>My home and neighborhood</b><br>Lots of love and memories");
+
+// var popup = L.popup()
+//     .setLatLng([11.001484, 77.017835])
+//     .setContent("My school - only the legends go there !")
+//     .openOn(mymap);
+</script>
+<body></body>
+{% endblock %}

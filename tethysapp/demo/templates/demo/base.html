@@ -23,19 +23,19 @@
 
 {% url 'demo:home' as home_url %}
 {% url 'demo:map' as map_url %}
-{% url 'demo:proposal' as proposal_url %}
+<!--{% url 'demo:proposal' as proposal_url %}-->
 {% url 'demo:design' as design_url %}
 
 
 <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
 <li class="{% if request.path == map_url %}active{% endif %}"><a href="{{ map_url }}">Map</a></li>
-<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
+<!--<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>-->
 <li class="{% if request.path == design_url %}active{% endif %}"><a href="{{ design_url }}">Design Page</a></li>
-<button id ='button' disabled onclick="app.distanceFinder()">Calculate PHA</button>
+<!--<button id ='button' disabled onclick="app.distanceFinder()">Calculate PHA</button>-->
 
-  <li class="separator"></li>
+<!--  <li class="separator"></li>-->
 
-0{% endblock %}
+{% endblock %}
 
 {% block app_content %}
 {% endblock %}

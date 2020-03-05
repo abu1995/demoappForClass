@@ -72,3 +72,18 @@ def home(request):
     }
 
     return render(request, 'demo/home.html', context)
+
+def map(request):
+    """
+    Controller for the page.
+    """
+    context = {}
+    return render(request, 'demo/map.html', context)
+
+# @login_required()
+def design(request):
+    """
+    Controller for the page.
+    """
+    context = {}
+    return render(request, 'demo/design.html', context)
